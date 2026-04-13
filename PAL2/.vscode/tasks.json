@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build: PALFunctions (Debug)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["build", "PALFunctions\\PALFunctions.vbproj", "--configuration", "Debug"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build: PALWizard (Debug)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["build", "PALWizard\\PALWizard.vbproj", "--configuration", "Debug"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build: All (Debug)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["build", "PALFunctions\\PALFunctions.vbproj", "--configuration", "Debug", "&&", "dotnet", "build", "PALWizard\\PALWizard.vbproj", "--configuration", "Debug"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build: All (Release)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["build", "PALFunctions\\PALFunctions.vbproj", "--configuration", "Release", "&&", "dotnet", "build", "PALWizard\\PALWizard.vbproj", "--configuration", "Release"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Clean: All",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["clean", "PALFunctions\\PALFunctions.vbproj", "&&", "dotnet", "clean", "PALWizard\\PALWizard.vbproj"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run: PALWizard (Debug)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": ["run", "--project", "PALWizard\\PALWizard.vbproj", "--configuration", "Debug"],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
